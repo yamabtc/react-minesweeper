@@ -101,7 +101,6 @@ var Game = React.createClass({
     return (
       <div>
         {modal}
-        <span>Hello, {this.props.name}!</span>
         <Board board={this.state.board} updateGame={this.updateGame} />
       </div>
     )
@@ -109,6 +108,6 @@ var Game = React.createClass({
 });
 
 React.render(
-  <Game name={'Charles'}/>, 
+  <Game />, 
   document.getElementById('main')
 );
