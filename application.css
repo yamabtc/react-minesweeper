@@ -1,4 +1,4 @@
-#main { 
+#main {
   width: 600px;
   margin: 0 auto;
   text-align: center;
@@ -6,6 +6,11 @@
 
 h1 {
   font-size: 24px;
+  text-align: center;
+}
+
+p {
+  font-size: 13px;
   text-align: center;
 }
 
@@ -39,7 +44,7 @@ h1 {
   border-style: inset;
 }
 
-.flagged, .bombed { 
+.flagged, .bombed {
   color: red;
 }
 
