@@ -1,9 +1,11 @@
 (function () {
+  "use strict";
+
   if (typeof window.Minesweeper === 'undefined') {
     window.Minesweeper = {};
   }
 
-  Tile = window.Minesweeper.Tile = function (board, pos) {
+  var Tile = window.Minesweeper.Tile = function (board, pos) {
     this.board = board;
     this.pos = pos;
     this.bombed = false;
@@ -65,7 +67,7 @@
     return false;
   };
 
-  Board = window.Minesweeper.Board = function (gridSize, numBombs) {
+  var Board = window.Minesweeper.Board = function (gridSize, numBombs) {
     this.gridSize = gridSize;
     this.grid = [];
     this.numBombs = numBombs;
@@ -96,7 +98,7 @@
       var row = Math.floor(Math.random() * (this.gridSize - 1));
       var col = Math.floor(Math.random() * (this.gridSize - 1));
 
-      tile = this.grid[row][col];
+      var tile = this.grid[row][col];
       if (!tile.bombed) {
         tile.plantBomb();
         totalPlantedBombs++;
