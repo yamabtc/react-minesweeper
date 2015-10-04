@@ -11,7 +11,7 @@
     this.flagged = false;
   }
 
-  Tile.DELTAS = [[-1, -1], [-1,  0], [-1,  1], [ 0, -1], 
+  Tile.DELTAS = [[-1, -1], [-1,  0], [-1,  1], [ 0, -1],
                  [ 0,  1], [ 1, -1], [ 1,  0], [ 1,  1]]
 
   Tile.prototype.adjacentBombCount = function() {
@@ -25,7 +25,7 @@
   };
 
   Tile.prototype.explore = function () {
-    if (this.flagged || this.explored) { 
+    if (this.flagged || this.explored) {
       return this;
     }
 
@@ -56,7 +56,7 @@
     this.bombed = true;
   };
 
-  Tile.prototype.toggleFlag = function () { 
+  Tile.prototype.toggleFlag = function () {
     if (!this.explored) {
       this.flagged = !this.flagged;
       return true;
@@ -85,7 +85,7 @@
 
   Board.prototype.onBoard = function (pos) {
     return (
-      pos[0] >= 0 && pos[0] < this.gridSize && 
+      pos[0] >= 0 && pos[0] < this.gridSize &&
         pos[1] >= 0 && pos[1] < this.gridSize
     )
   }
@@ -120,7 +120,7 @@
     var won = true;
     this.grid.forEach(function(row) {
       row.forEach(function(tile) {
-        if (tile.flagged === tile.revealed || tile.flagged !== tile.bombed) {
+        if (tile.bombed === tile.explored) {
           won = false;
         }
       });
